@@ -12,4 +12,8 @@ export class GameListComponent implements OnInit {
   ngOnInit() {
   }
 
+  canNavigateForward() {
+    return !!sessionStorage.getItem('navigateFrom')
+  }
+
 }

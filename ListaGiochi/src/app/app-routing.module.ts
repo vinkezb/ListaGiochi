@@ -4,13 +4,20 @@ import { HomeComponent } from './home/home.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { LoginComponent } from './login/login.component';
+import { RoutingEnum } from './model/routing-enum'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch:'full'},
-    {path: 'home', component: HomeComponent},
-    {path: 'lista-giochi', component: GameListComponent},
-    {path: 'modifica-gioco', component: EditGameComponent},
-    {path: 'login', component: LoginComponent},
+    {
+      path: RoutingEnum.base, children: [
+        {path: RoutingEnum.home, component: HomeComponent},
+        {path: RoutingEnum.lista, component: GameListComponent},
+        {path: RoutingEnum.modifica, component: EditGameComponent},
+      ]
+    },
+
+    {path: '', redirectTo: RoutingEnum.base+'/'+RoutingEnum.home, pathMatch: 'full'},
+    {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
