@@ -1,0 +1,33 @@
+ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    position: relative;
+    left: 60%;
+    bottom: 106%;
+}
+
+li{
+    padding-left: 5%;
+    margin-top: 15px;
+    color: white;
+}
+
+.menu{
+    background: black;
+    height: 45px;
+}
+
+.router-link-active{
+    font-weight: bold;
+    color: rgb(201, 30, 30);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    width:4%;
+}

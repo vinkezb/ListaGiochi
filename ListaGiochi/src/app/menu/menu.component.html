@@ -1,3 +1,8 @@
-<ul>
-  <li *ngFor="let item of menuList" (click)="showSection(item.id)">{{item.descrizione}}</li>
-</ul>
+<div class="menu">
+    <img src="https://1000logos.net/wp-content/uploads/2017/05/PlayStation-Logo.png">
+  <ul>
+    <li *ngFor="let item of menuList">
+      <a [routerLink]="[item.endpoint]" routerLinkActive="router-link-active">{{item.descrizione}}</a>
+    </li>
+  </ul>
+</div>

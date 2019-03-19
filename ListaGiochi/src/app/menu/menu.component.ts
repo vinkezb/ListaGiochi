@@ -8,21 +8,15 @@ import { MenuItem } from 'src/app/model/menu-item';
 })
 export class MenuComponent implements OnInit {
   menuList: MenuItem[] = [
-    {id: 1, descrizione: 'Home', selezionato: false},
-    {id: 2, descrizione: 'Lista', selezionato: false},
-    {id: 3, descrizione: 'Modifica', selezionato: false}
+    {id: 1, descrizione: 'Home', selezionato: false, endpoint: '/home'},
+    {id: 2, descrizione: 'Lista', selezionato: false, endpoint: '/lista-giochi'},
+    {id: 3, descrizione: 'Modifica', selezionato: false, endpoint: '/modifica-gioco'},
+    {id: 4, descrizione: 'Login', selezionato:false, endpoint:'/login'}
   ];
-
-  @Output('showSection')
-  showSectionEvent: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  showSection(id: number){
-    this.showSectionEvent.emit(id);
   }
 
 }
