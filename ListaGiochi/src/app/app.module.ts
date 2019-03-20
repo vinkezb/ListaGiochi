@@ -21,7 +21,8 @@ import { AuthGuard } from './services/auth.guard.service';
     EditGameComponent,
     MenuComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
