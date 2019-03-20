@@ -6,14 +6,18 @@ import { EditGameComponent } from './edit-game/edit-game.component';
 import { LoginComponent } from './login/login.component';
 import { RoutingEnum } from './model/routing-enum'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './services/auth.guard.service';
 
 const routes: Routes = [
     {
       path: RoutingEnum.base, children: [
         {path: RoutingEnum.home, component: HomeComponent},
-        {path: RoutingEnum.lista, component: GameListComponent},
+        {path: RoutingEnum.lista, component: GameListComponent, canDeactivate :[AuthGuard]},
         {path: RoutingEnum.modifica, component: EditGameComponent},
-      ]
+      ],
+      canActivateChild : [AuthGuard]
+
+
     },
 
     {path: '', redirectTo: RoutingEnum.base+'/'+RoutingEnum.home, pathMatch: 'full'},
