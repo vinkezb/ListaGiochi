@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './services/auth.guard.service';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthGuard } from './services/auth.guard.service';
     MenuComponent,
     LoginComponent,
     PageNotFoundComponent,
+    FormComponent,
     
   ],
   imports: [
