@@ -3,6 +3,7 @@ import { CanActivateChild, CanDeactivate, Router, CanActivate} from '@angular/ro
 import { Observable } from 'rxjs';
 import { GameListComponent } from '../game-list/game-list.component';
 import { RoutingEnum } from '../model/routing-enum';
+import { HomeComponent } from '../home/home.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,9 @@ export class AuthGuard implements CanActivateChild, CanDeactivate<GameListCompon
   }
 
   canDeactivate(component: GameListComponent, currentRoute: import("@angular/router").ActivatedRouteSnapshot, currentState: import("@angular/router").RouterStateSnapshot, nextState?: import("@angular/router").RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
-    if(component.canNavigateForward()) {
+    
+      return true;
 
-    }else{
-      return false;
-    }
   }
   constructor(private router: Router){
 

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms'
+ 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameListComponent } from './game-list/game-list.component';
@@ -27,6 +28,7 @@ import { AuthGuard } from './services/auth.guard.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

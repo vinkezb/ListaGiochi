@@ -14,14 +14,12 @@ const routes: Routes = [
         {path: RoutingEnum.home, component: HomeComponent},
         {path: RoutingEnum.lista, component: GameListComponent, canDeactivate :[AuthGuard]},
         {path: RoutingEnum.modifica, component: EditGameComponent},
-        {path: RoutingEnum.login, component: LoginComponent},
       ],
       canActivateChild : [AuthGuard]
-
-
     },
-
-    {path: '', redirectTo: RoutingEnum.base+'/'+RoutingEnum.login, pathMatch: 'full'},
+    
+    {path: RoutingEnum.login, component: LoginComponent},
+    {path: '', redirectTo: '/'+RoutingEnum.login, pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent},
 ];
 

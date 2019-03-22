@@ -1,5 +1,8 @@
 <form (submit)="loginUser($event)">
-  <input type="text" placeholder="Username" id="Username">
-  <input type="password" placeholder="Password" id="Password">
+  <input required ngModel name="Username" #Username="ngModel" type="text" placeholder="Username" id="Username">
+  <div class="alert alert-danger" *ngIf="Username.touched && !Username.valid">Username required</div>
+  <input required ngModel name="Password" #Password="ngModel" type="password" placeholder="Password" id="Password">
+  <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">Password required</div>
+
   <input type="submit" value="Submit">
 </form>
