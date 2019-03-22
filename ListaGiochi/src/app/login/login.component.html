@@ -1,8 +1,12 @@
-<form (submit)="loginUser($event)">
-  <input required ngModel name="Username" #Username="ngModel" type="text" placeholder="Username" id="Username">
-  <div class="alert alert-danger" [hidden]="Username.untouched && !Username.valid"></div>
-  <input required ngModel name="Password" #Password="ngModel" type="password" placeholder="Password" id="Password">
-  <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid"></div>
-
-  <input type="submit" value="Submit">
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <div class="form-group">
+    <input class="form-control" type="text" required [(ngModel)]="form.Username" name="Username" #Username="ngModel"  placeholder="Username">
+    <div class="alert alert-danger" [hidden]="Username.valid || Username.pristine">Username is required</div>
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="password" required [(ngModel)] ="form.Password" name="Password" #Password="ngModel" placeholder="Password">
+    <div class="alert alert-danger" [hidden]="Password.valid || Password.pristine">Password is required</div>
+  </div>
+    <button type="submit" class="submit btn" [disabled]="myForm.form.invalid">Submit</button>
+    <button (click)="myForm.reset()">Reset</button>
 </form>

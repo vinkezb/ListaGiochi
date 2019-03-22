@@ -2,6 +2,6 @@ body{
     margin: 0;
 }
 
-input.ng-dirty.ng-invalid{
+input.ng-touched.ng-invalid{
     border: solid 1px red;
 }

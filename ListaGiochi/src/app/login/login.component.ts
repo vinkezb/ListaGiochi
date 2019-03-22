@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { user } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  form: user= new user();
+
+  onSubmit(){
+    console.log("message:", this.form);
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  loginUser(event: any){
-    event.preventDefault()
-    const target = event.target
-    const username = target.querySelector('#Username').value
-    const password = target.querySelector('#Password').value
-    console.log(username, password)
-  }
+
 
 }
